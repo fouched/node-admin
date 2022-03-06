@@ -17,10 +17,12 @@ createConnection().then(connection => {
 	app.use(cookieParser())
 	
 	// allow cross side scripting
-	app.use(cors({
-		credentials: true, // allow exchanging of cookies
-		origin: ["http://localhost:3000"]
-	}))
+	app.use(
+		cors({
+			credentials: true, // allow exchanging of cookies
+			origin: ['http://localhost:3000', 'http://localhost:8080'],
+		})
+	)
 	
 	routes(app)
 	
