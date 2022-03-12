@@ -29,7 +29,7 @@ export const routes = (router: Router) => {
 	router.post('/api/roles', AuthMiddleware, PermissionMiddleware('roles'), CreateRole)
 	router.get('/api/roles/:id', AuthMiddleware, PermissionMiddleware('roles'), GetRole)
 	router.put('/api/roles/:id', AuthMiddleware, PermissionMiddleware('roles'), UpdateRole)
-	router.delete('/api/roles/:id', AuthMiddleware, PermissionMiddleware('rolesroducts'), DeleteRole)
+	router.delete('/api/roles/:id', AuthMiddleware, PermissionMiddleware('roles'), DeleteRole)
 
 	router.get('/api/products', AuthMiddleware, PermissionMiddleware('products'), Products)
 	router.post('/api/products', AuthMiddleware, PermissionMiddleware('products'), CreateProduct)
