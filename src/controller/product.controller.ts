@@ -32,8 +32,7 @@ export const CreateProduct = async (req: Request, res: Response) => {
 
 export const GetProduct = async (req: Request, res: Response) => {
 	const repository = getManager().getRepository(Product)
-	const product = repository.findOne(req.params.id)
-
+	const product = await repository.findOne(req.params.id)
 	res.send(product)
 }
 
